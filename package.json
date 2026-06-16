@@ -1,0 +1,23 @@
+{
+  "name": "@jonking-ajar/yaak-plugin-doppler",
+  "displayName": "Doppler",
+  "description": "Yaak plugin for fetching secrets from Doppler via the CLI",
+  "repository": "https://github.com/jonking-ajar/yaak-plugin-doppler",
+  "private": false,
+  "version": "0.0.1",
+  "scripts": {
+    "build": "yaak plugin build",
+    "dev": "yaak plugin dev",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  },
+  "dependencies": {
+    "@yaakapp/api": "^0.8.3",
+    "node-cache": "^5.1.2"
+  },
+  "packageManager": "pnpm@11.7.0"
+}
