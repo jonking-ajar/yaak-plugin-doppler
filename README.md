@@ -2,26 +2,28 @@
 
 Fetch secrets from [Doppler](https://www.doppler.com/) directly inside [Yaak](https://yaak.app),
 using the local Doppler CLI. This is a port of the
-[Insomnia Doppler plugin](https://github.com/jonking-ajar/insomnia-plugin-doppler) and follows the
-structure of the [Yaak 1Password plugin](https://github.com/david-dreyer/yaak-plugin-op).
+[Insomnia Doppler plugin](https://github.com/jonking-ajar/insomnia-plugin-doppler).
 
 ## Getting started
 
-1. Install the [Doppler CLI](https://docs.doppler.com/docs/install-cli) and authenticate with
+* Install the [Doppler CLI](https://docs.doppler.com/docs/install-cli) and authenticate with
    `doppler login`.
-2. Build the plugin: `npm install && npm run build`.
-3. Install it in Yaak: **Settings → Plugins → Select Plugin**, and choose this directory.
+* Clone this repo locally or download latest Release archive
+* Add `config.json` file to the `build` directory as appropriate (see: [Configuration](#configuration))
+* Install the plugin
+  * Yaak > Settings > Plugins
+  * Click 'Select Plugin', and open the location of the cloned repository
 
 ## Usage
 
 In any field that supports template functions, type `doppler.secret` and select it from the
 autocomplete. Fill in the three arguments:
 
-| Argument  | Description           | Example        |
-| --------- | --------------------- | -------------- |
-| `project` | Doppler project name  | `web-frontend` |
-| `config`  | Doppler config name   | `prd`          |
-| `secret`  | Doppler secret name   | `API_KEY`      |
+| Argument  | Description          | Example        |
+| --------- | -------------------- | -------------- |
+| `project` | Doppler project name | `web-frontend` |
+| `config`  | Doppler config name  | `prd`          |
+| `secret`  | Doppler secret name  | `API_KEY`      |
 
 Under the hood this runs:
 
@@ -50,6 +52,6 @@ Seconds to keep fetched secrets in memory. Defaults to `3600` (1 hour). Use `0` 
 ## Development
 
 ```sh
-npm run dev    # watch + rebuild
-npm test       # run unit tests
+pnpm dev     # watch + rebuild
+pnpm test    # run unit tests
 ```
